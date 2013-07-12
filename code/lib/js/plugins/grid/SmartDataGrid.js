@@ -16,8 +16,7 @@
 
 /*!
  * @author Manish Shanker
- * @revision $Rev$
- * @date $Date$
+ * @version $version$
  */
 
 (function ($) {
