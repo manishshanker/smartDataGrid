@@ -29,9 +29,8 @@ Browser support
 Examples
 ========
 
-Example 1: Vanilla Grid
-Example 2: Grid with filtering, grouping, sorting and other feaatures added
-Example 3: Grid with various skins
+-Example 1: [Vanilla Grid](http://jsfiddle.net/PB7f6/embedded/result/)
+-Example 2: [Grid with filtering, grouping, sorting, state persistance and other feaatures added](http://jsfiddle.net/PB7f6/1/embedded/result)
 
 Documentation
 =============
