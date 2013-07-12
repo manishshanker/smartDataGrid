@@ -239,6 +239,7 @@
     display: inline-block;
     background: url(./../code/lib/images/defaultTheme/smartDataGrid_arrows.png) no-repeat;
 }
+
 .smartDataGrid .smartDataGrid-filter {
     white-space: nowrap;
     zoom: 1;
@@ -288,6 +289,7 @@
 .ui-multiselect-menu .ui-multiselect-none span.ui-icon {
     top: 0;
 }
+
 .smartDataGrid-group-by , .smartDataGrid-group-by  div,
 .smartDataGrid-group-by   h3, .smartDataGrid-group-by  span,
 .smartDataGrid input {
@@ -485,6 +487,7 @@
     border-left: 1px solid #8F8F8F;
     padding-left: 5px;
 }
+
 .smartDataGrid .date {
     color: #0099ff;
     display: inline;
@@ -534,10 +537,11 @@
 .smartDataGrid .smartDataGrid-filter .ui-multiselect {
     overflow: hidden;
 }
+
 .smartDataGrid-switch-theme {
 	vertical-align: middle;
 	margin-left: 10px;
-	font-family: Arial;
+	font-family: Arial,serif;
 	font-size: 13px;
 	margin-top: 10px;
 }
