@@ -28,7 +28,7 @@ Examples
 ========
 
 - Example 1: [Vanilla Grid](http://jsfiddle.net/PB7f6/embedded/result/)
-- Example 2: [Grid with filtering, grouping, sorting, state persistance and other feaatures added](http://jsfiddle.net/PB7f6/1/embedded/result)
+- Example 2: [Grid with filtering, grouping, sorting, state persistance and other features](http://jsfiddle.net/PB7f6/1/embedded/result)
 
 Documentation
 =============
