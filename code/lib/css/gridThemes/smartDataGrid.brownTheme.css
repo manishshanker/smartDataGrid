@@ -1,0 +1,137 @@
+/*smartDataGrid.css*/
+.smartDataGrid-brown {
+    border-color: #b15700;
+}
+
+.smartDataGrid-brown .smartDataGrid-heading,
+.smartDataGrid-brown .smartDataGrid-heading .cell  {
+    background-image: url(../../images/brownTheme/smartDataGrid_header_bg.png);
+}
+
+.smartDataGrid-brown .smartDataGrid-heading {
+	border-bottom-color: #ccc;
+}
+
+.smartDataGrid-brown .smartDataGrid-heading .cell {
+    color: #555;
+}
+
+.smartDataGrid-brown .smartDataGrid-rows .row {
+    border-bottom-color: #EDEDED;
+    background-color: #FFFCF8;
+}
+
+.smartDataGrid-brown .smartDataGrid-rows .row-first {
+    border-top-color: #EDEDED;
+}
+
+.smartDataGrid-brown .smartDataGrid-rows .cell {
+    background-color: #fff0e0;
+}
+
+.smartDataGrid-brown .smartDataGrid-rows .even,
+.smartDataGrid-brown .smartDataGrid-rows .even .cell {
+    background-color: #FCF7EE;
+}
+
+.smartDataGrid-brown .group-header  .cell,
+.smartDataGrid-brown .group-header .even,
+.smartDataGrid-brown .group-header .even .cell {
+    background-color: #e6cab4;
+}
+
+.smartDataGrid-brown .smartDataGrid-rows .row-hover {
+    background-color: #F8E5C4;
+}
+
+.smartDataGrid-brown .smartDataGrid-rows .row-hover .cell {
+    background-color: #F8E5C4;
+}
+
+.smartDataGrid-brown .group .group-header {
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.smartDataGrid-brown .group .open-close-indicator {
+    color: #5b0f0b;
+}
+
+.smartDataGrid-brown .total-row-count {
+    background-color: #F2E9E1;
+}
+
+/*Real-time data*/
+.smartDataGrid-brown .smartDataGrid-rows .updated-cell.positive,
+.smartDataGrid-brown .smartDataGrid-rows .even .updated-cell.positive {
+    background-color: #a0d800;
+    color: #000;
+}
+
+.smartDataGrid-brown .smartDataGrid-rows .updated-cell.negative,
+.smartDataGrid-brown .smartDataGrid-rows .even .updated-cell.negative {
+    background-color: #d8361d;
+    color: #ffeae4;
+}
+
+/*smartDataGrid.Date.css*/
+.smartDataGrid-brown .date {
+    color: #b85146;
+}
+
+/*smartDataGridColumnReorder.css*/
+.smartDataGrid-brown .smartDataGrid-heading .reorder {
+	border-right-color: #b15700;
+}
+
+/*smartDataGridColumnResize.css*/
+.smartDataGrid-brown .resize-guide {
+	background-color: #ccc;
+}
+
+/*smartDataGridColumnSort.css*/
+.smartDataGrid-brown .smartDataGrid-heading .sort-hover,
+.smartDataGrid-brown .smartDataGrid-heading .desc,
+.smartDataGrid-brown .smartDataGrid-heading .asc {
+    background-image: url(../../images/brownTheme/smartDataGrid_header_bg.png);
+}
+
+.smartDataGrid-brown .smartDataGrid-heading .desc .sort-arrow,
+.smartDataGrid-brown .smartDataGrid-heading .asc .sort-arrow {
+    background-image: url(../../images/brownTheme/smartDataGrid_arrows.png);
+}
+
+/*smartDataGridFilter.css*/
+.smartDataGrid-brown .smartDataGrid-filter .cell {
+	border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.smartDataGrid-brown .smartDataGrid-filter .cell .smartDataGrid-filter-control {
+    border: 1px solid #D3D3D3;
+}
+
+
+/*smartDataGridGroups.css*/
+.smartDataGrid-group-by-brown  .cell,
+.smartDataGrid-group-by-brown  .first,
+.smartDataGrid-group-by-brown  .cell .label,
+.smartDataGrid-group-by-brown  .cell .arrow,
+.smartDataGrid-group-by-brown  .last .arrow,
+.smartDataGrid-group-by-brown .group-helper,
+.smartDataGrid-group-by-brown .group-helper .arrow  {
+	color: #5B2F03;
+	background-image: url(../../images/brownTheme/smartDataGrid_groups_sprite.png);
+}
+
+.smartDataGrid-group-by-brown .cell a.remove,
+.smartDataGrid-group-by-brown .cell a.remove:link,
+.smartDataGrid-group-by-brown .cell a.remove:visited,
+.smartDataGrid-group-by-brown .cell a.remove:hover,
+.smartDataGrid-group-by-brown .cell a.remove:active {
+	color: #FCF7EE;
+}
+
+.smartDataGrid-group-by-brown.ui-state-highlight {
+	background-color: #FCF7EE;
+	background-image: none;
+}

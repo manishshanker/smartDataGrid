@@ -1,0 +1,7 @@
+.smartDataGrid .smartDataGrid-heading .reorder,
+.smartDataGrid .smartDataGrid-heading .reorder-right {
+    border-right: 5px solid #8FC65B;
+}
+.smartDataGrid .smartDataGrid-heading .reorder-left {
+    border-left: 5px solid #8FC65B;
+}

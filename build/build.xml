@@ -1,0 +1,105 @@
+<project name="ccp" default="package" basedir=".\..">
+
+    <property name="libSource" value="${basedir}\code\lib"/>
+    <property name="vendorLibSource" value="${basedir}\code\lib\vendor"/>
+    <property name="outputDir" value="${basedir}\out"/>
+    <property name="distDir" value="${basedir}\dist"/>
+
+    <taskdef name="yuicompress" classname="com.yahoo.platform.yui.compressor.YUICompressTask">
+        <classpath>
+            <pathelement path="${basedir}\build\jars\YUIAnt.jar"/>
+            <pathelement path="${basedir}\build\jars\yuicompressor-2.4.7.jar"/>
+            <pathelement path="${basedir}\build\jars\js.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="package" depends="clean, compile-merge-and-minify-css, merge-and-minify-js, copy-vendor-lib, copy-output-to-dist, update-css-image-urls">
+    </target>
+
+    <target name="clean">
+        <delete dir="${outputDir}"/>
+    </target>
+
+    <target name="merge-and-minify-js">
+        <sequential>
+            <echo message="BEGIN: JS OPTIMIZATION"/>
+            <concat destfile="${outputDir}\js\smartDataGrid.js" fixlastline="true">
+                <union>
+                    <!--<fileset dir="${vendorLibSource}\js" casesensitive="false" includes="jquery.js"/>-->
+                    <!--<fileset dir="${vendorLibSource}\js" casesensitive="false" includes="jquery-ui-*.js"/>-->
+                    <!--<fileset dir="${vendorLibSource}\js" casesensitive="false" includes="*.js"/>-->
+
+                    <fileset dir="${libSource}\js" casesensitive="false" includes="plugins/grid/SmartDataGrid.js"/>
+                    <fileset dir="${libSource}\js" casesensitive="false" includes="plugins/grid/jquery.smartDataGrid.core.js"/>
+                    <fileset dir="${libSource}\js" casesensitive="false" includes="plugins/grid/**/*.js"/>
+                    <fileset dir="${libSource}\js" casesensitive="false" includes="plugins/gridExtensions/**/*.js"/>
+                    <fileset dir="${libSource}\js" casesensitive="false" includes="modules/**/*.js"/>
+                </union>
+            </concat>
+            <copy file="${outputDir}\js\smartDataGrid.js" tofile="${outputDir}\js\smartDataGrid.min.js"/>
+            <yuicompress linebreak="300"
+                         warn="false"
+                         munge="yes"
+                         preserveallsemicolons="true"
+                         outputfolder="${outputDir}\js">
+                <fileset dir="${outputDir}\js">
+                    <include name="smartDataGrid.min.js"/>
+                </fileset>
+            </yuicompress>
+            <echo message="END: JS OPTIMIZATION"/>
+        </sequential>
+    </target>
+
+    <target name="compile-merge-and-minify-css">
+        <sequential>
+            <echo message="BEGIN: CSS OPTIMIZATION"/>
+            <concat destfile="${outputDir}\css\smartDataGrid.css" fixlastline="true">
+                <union>
+                    <!--<fileset dir="${vendorLibSource}\css" casesensitive="false" includes="jquery-ui-*.css"/>-->
+                    <!--<fileset dir="${vendorLibSource}\css" casesensitive="false" includes="*.css"/>-->
+
+                    <fileset dir="${libSource}\css" casesensitive="false" includes="jqueryUI/*.css"/>
+                    <fileset dir="${libSource}\css" casesensitive="false" includes="grid/smartDataGrid.core.css"/>
+                    <fileset dir="${libSource}\css" casesensitive="false" includes="grid/**/*.css"/>
+                    <fileset dir="${libSource}\css" casesensitive="false" includes="gridExtensions/**/*.css"/>
+                </union>
+            </concat>
+            <copy file="${outputDir}\css\smartDataGrid.css" tofile="${outputDir}\css\smartDataGrid.min.css"/>
+            <yuicompress linebreak="300" warn="false" munge="yes" preserveallsemicolons="true"
+                         outputfolder="${outputDir}\css">
+                <fileset dir="${outputDir}\css" >
+                    <include name="smartDataGrid.min.css" />
+                </fileset>
+            </yuicompress>
+            <echo message="END: CSS OPTIMIZATION"/>
+        </sequential>
+    </target>
+
+    <target name="copy-vendor-lib">
+        <mkdir dir="${outputDir}\vendor"/>
+        <copy todir="${outputDir}\vendor">
+            <fileset dir="${vendorLibSource}"/>
+        </copy>
+        <copy todir="${outputDir}\images">
+            <fileset dir="${libSource}\images"/>
+        </copy>
+    </target>
+
+    <target name="copy-output-to-dist">
+        <copy file="${outputDir}\css\smartDataGrid.css" tofile="${distDir}\smartDataGrid.css"/>
+        <copy file="${outputDir}\css\smartDataGrid.min.css" tofile="${distDir}\smartDataGrid.min.css"/>
+        <copy file="${outputDir}\js\smartDataGrid.js" tofile="${distDir}\smartDataGrid.js"/>
+        <copy file="${outputDir}\js\smartDataGrid.min.js" tofile="${distDir}\smartDataGrid.min.js"/>
+    </target>
+
+    <target name="update-css-image-urls">
+        <replaceregexp match="\.\.\/\.\.\/images\/"
+                       byline="true"
+                       flags="gs"
+                       replace="./../code/lib/images/">
+            <fileset dir="${outputDir}" includes="**/*.css"/>
+            <fileset dir="${distDir}" includes="**/*.css"/>
+        </replaceregexp>
+    </target>
+
+</project>

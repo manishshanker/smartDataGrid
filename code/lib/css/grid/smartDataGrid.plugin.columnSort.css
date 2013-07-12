@@ -1,0 +1,28 @@
+.smartDataGrid .smartDataGrid-heading .sort-hover {
+	background: url(../../images/defaultTheme/smartDataGrid_header_bg.png) 0 -119px repeat-x;
+}
+
+.smartDataGrid .smartDataGrid-heading .desc,
+.smartDataGrid .smartDataGrid-heading .asc {
+    background: url(../../images/defaultTheme/smartDataGrid_header_bg.png) 0 -56px repeat-x;
+}
+
+.smartDataGrid .smartDataGrid-heading .sortable-column .sort-arrow {
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    right: 2px;
+    top: 4px;
+    position: absolute;
+    z-index: 0;
+}
+
+.smartDataGrid .smartDataGrid-heading .desc .sort-arrow {
+    display: inline-block;
+    background: url(../../images/defaultTheme/smartDataGrid_arrows.png) 0 -33px no-repeat;
+}
+
+.smartDataGrid .smartDataGrid-heading .asc .sort-arrow {
+    display: inline-block;
+    background: url(../../images/defaultTheme/smartDataGrid_arrows.png) no-repeat;
+}

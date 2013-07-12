@@ -1,0 +1,181 @@
+.smartDataGrid-group-by , .smartDataGrid-group-by  div,
+.smartDataGrid-group-by   h3, .smartDataGrid-group-by  span,
+.smartDataGrid input {
+    margin: 0;
+    padding: 0;
+	font-size: 100%;
+	font-family: inherit;
+}
+
+.smartDataGrid-group-by.ui-state-highlight-hover {
+    background: #e8e8e8 none;
+    border: 1px dashed #f00;
+}
+
+.smartDataGrid-group-by {
+    width: 90%;
+    border: 1px solid transparent;
+    margin-left: 10px;
+	margin-top: 10px;
+    line-height: 1.6em;
+    height: 1.6em;
+	font-family: Arial, serif;
+}
+
+.smartDataGrid-group-by p {
+    margin: 0;
+}
+
+.smartDataGrid-group-by  .cell {
+	background: url(../../images/defaultTheme/smartDataGrid_groups_sprite.png) 0 -96px no-repeat;
+	padding-left: 5px;
+	display: inline-block;
+    cursor: move;
+}
+
+.smartDataGrid-group-by.ui-state-highlight-hover .cell {
+    cursor: default;
+}
+
+.smartDataGrid-group-by  .first  {
+	background: url(../../images/defaultTheme/smartDataGrid_groups_sprite.png) no-repeat;
+	padding-left: 5px;
+	display: inline-block;
+}
+
+.smartDataGrid-group-by  .cell .label {
+	background: url(../../images/defaultTheme/smartDataGrid_groups_sprite.png) 0 -96px repeat-x;
+	display: inline-block;
+	line-height: 26px;
+}
+
+.smartDataGrid-group-by  .cell .arrow {
+	background: url(../../images/defaultTheme/smartDataGrid_groups_sprite.png) right -48px no-repeat;
+	display: inline-block;
+	padding-right: 16px;
+}
+
+.smartDataGrid-group-by  .last .arrow {
+	background: url(../../images/defaultTheme/smartDataGrid_groups_sprite.png) top right no-repeat;
+}
+
+.smartDataGrid-group-by .cell a.remove,
+.smartDataGrid-group-by .cell a.remove:link,
+.smartDataGrid-group-by .cell a.remove:visited,
+.smartDataGrid-group-by .cell a.remove:hover,
+.smartDataGrid-group-by .cell a.remove:active {
+	text-decoration: none;
+	color: #f00;
+}
+
+.smartDataGrid-group-by .group-helper {
+    background: url(../../images/defaultTheme/smartDataGrid_groups_sprite.png) no-repeat;
+}
+
+.smartDataGrid-group-by .group-helper .arrow {
+    background: url(../../images/defaultTheme/smartDataGrid_groups_sprite.png) top right no-repeat;
+}
+
+/*Group styles for the grid*/
+.smartDataGrid .group {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.ie7below .smartDataGrid .group {
+	display: inline;
+}
+
+.smartDataGrid .group .cell {
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent;
+}
+
+.ie7below .smartDataGrid .group .cell {
+	display: inline;
+}
+
+.smartDataGrid .group .group-header {
+	margin: 0;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0 10px 0 0;
+	position: relative;
+}
+
+.smartDataGrid .group .details-in-first-column {
+	border-bottom: 1px solid #aaa;
+}
+
+.smartDataGrid .group-data .group .group-header .cell {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.smartDataGrid .group-data .group .details-in-first-column .cell {
+	border-color: transparent;
+	overflow: visible;
+	text-overflow: clip;
+}
+
+.smartDataGrid .group .details-in-first-column .first-cell-in-group {
+	position: relative;
+}
+
+.smartDataGrid .group-closed .row,
+.smartDataGrid .group-closed .group-header-row {
+	height: 0;
+	overflow: hidden;
+}
+
+.smartDataGrid .group-closed-complete .row,
+.smartDataGrid .group-closed-complete .group-data {
+	display: none;
+}
+
+.smartDataGrid .row,
+.smartDataGrid .group-header-row,
+.smartDataGrid .group-closed .close {
+	height: 22px;
+	transition: height 0.2s;
+	-moz-transition: height 0.2s;
+	-webkit-transition: height 0.2s;
+	-o-transition: height 0.2s;
+}
+
+.smartDataGrid .smartDataGrid-rows .group .row-first {
+	border-top: 0;
+}
+
+.smartDataGrid .smartDataGrid-rows .group .spacer {
+	vertical-align: top;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.smartDataGrid .group .open-close-indicator {
+	display: inline-block;
+	font-size: 100%;
+	width: 5px;
+	line-height: 1.2em;
+	position: absolute;
+	z-index: 1;
+	vertical-align: top;
+	top: 4px;
+	left: 3px;
+	height: 5px;
+	color: #fff;
+	font-weight: bold;
+}
+
+.smartDataGrid .smartDataGrid-heading .groupable-indicator {
+    display: inline-block;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    height: 5px;
+    width: 9px;
+    overflow: hidden;
+}

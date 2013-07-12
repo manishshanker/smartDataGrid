@@ -1,0 +1,161 @@
+.smartDataGrid, .smartDataGrid div, .smartDataGrid  h3,
+.smartDataGrid span, .smartDataGrid input, .smartDataGrid ul, .smartDataGrid li, .smartDataGrid * {
+    margin: 0;
+    padding: 0;
+	font-size: 100%;
+	font-family: inherit;
+}
+
+.smartDataGrid {
+    border: 1px solid #9DB9ED;
+    border-top: 2px solid #8FC65B;
+    overflow: hidden;
+    margin: 10px;
+    font-size: 0.7em;
+    position: relative;
+	width: auto;
+	font-family: Arial, serif;
+}
+
+.smartDataGrid .row,
+.smartDataGrid .smartDataGrid-heading {
+    white-space: nowrap;
+}
+
+.smartDataGrid .smartDataGrid-heading {
+    background: url(../../images/defaultTheme/smartDataGrid_header_bg.png) repeat-x;
+	border-bottom: 1px solid #ccc;
+}
+
+.smartDataGrid .smartDataGrid-rows {
+    width: 100%;
+    overflow: auto;
+    height: 350px;
+    display: block;
+	background: #dddddd;
+}
+
+.smartDataGrid .smartDataGrid-rows .row {
+    background: #eee;
+}
+
+.smartDataGrid .smartDataGrid-rows .group-header-row .cell,
+.smartDataGrid .smartDataGrid-rows .row .cell {
+    margin-top: 0;
+}
+
+.smartDataGrid .group-header-row .cell,
+.smartDataGrid .row .cell {
+    line-height: 22px;
+    height: 22px;
+}
+
+.smartDataGrid .smartDataGrid-heading .cell {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+    padding: 8px 10px 8px 10px;
+    color: #555;
+    background: url(../../images/defaultTheme/smartDataGrid_header_bg.png) repeat-x;
+    display: inline-block;
+    position: relative;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.ie7below .smartDataGrid .smartDataGrid-heading .cell {
+	display: inline;
+}
+
+.smartDataGrid .smartDataGrid-heading .first {
+	border-left: 0;
+	padding-left: 11px;
+}
+
+.smartDataGrid .smartDataGrid-heading .last {
+	/*border-right: 0;*/
+}
+
+.smartDataGrid .smartDataGrid-rows .group-header-row .cell,
+.smartDataGrid .smartDataGrid-rows .row .cell {
+	height: auto;
+}
+
+.smartDataGrid .smartDataGrid-rows .row-first {
+    border-top: 1px solid #EDEDED;
+}
+
+.smartDataGrid .smartDataGrid-rows .cell {
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.smartDataGrid .smartDataGrid-rows .even,
+.smartDataGrid .smartDataGrid-rows .even .cell {
+    background-color: #F7F7F7;
+}
+
+.smartDataGrid .group-header-row .cell,
+.smartDataGrid .row .cell {
+    padding: 0 10px 0 10px;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #fff;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 4px;
+	text-overflow: ellipsis;
+}
+
+.ie7below .smartDataGrid .group-header-row .cell,
+.ie7below .smartDataGrid .row .cell {
+	display: inline;
+}
+
+.smartDataGrid .smartDataGrid-rows .row-hover {
+    background-color: #ebebeb;
+}
+
+.smartDataGrid .smartDataGrid-rows .row-hover .cell {
+    background-color: #c9c9c9;
+}
+
+.smartDataGrid .smartDataGrid-heading .cell {
+    cursor: default;
+}
+
+.column-helper {
+    border: 0;
+    font-family: Arial,serif;
+    z-index: 9999;
+}
+
+.column-helper .smartDataGrid-heading {
+    border: 0;
+}
+
+.smartDataGrid .total-row-count {
+    background-color: #eee;
+    text-align: right;
+    padding: 2px 5px 2px 0;
+}
+
+.smartDataGrid .loading-message {
+    display: none;
+    font-size: 85%;
+    background-color: #cc0000;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    bottom: 0;
+    padding: 2px 4px;
+    text-align: center;
+}
+
+.NUMERIC {
+    text-align: right;
+}

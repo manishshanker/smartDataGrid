@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>SmartDataGrid | With non-minified and non-merged files and multiple instances</title>
+    
+    <!--vendor library css files need for additional features like multi select, drag drop, date range picker, etc.-->
+    <link rel="stylesheet" type="text/css" href="lib/vendor/css/jquery-ui-1.8.16.custom.css" />
+    <link rel="stylesheet" type="text/css" href="lib/vendor/css/jquery.multiselect.css" />
+    <link rel="stylesheet" type="text/css" href="lib/vendor/css/ui.daterangepicker.css" />
+    
+    <!--jquery ui image path change-->
+    <link rel="stylesheet" type="text/css" href="lib/css/jqueryUI/jquery-ui-images.css" />
+
+    <!--css files for core grid and extensions-->
+    <link rel="stylesheet" type="text/css" href="lib/css/grid/smartDataGrid.core.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/grid/smartDataGrid.plugin.groups.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/grid/smartDataGrid.plugin.columnResize.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/grid/smartDataGrid.plugin.columnSort.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/grid/smartDataGrid.plugin.columnReorder.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/grid/smartDataGrid.plugin.filter.css" />
+    
+    <!--css files for custom extensions -->
+    <link rel="stylesheet" type="text/css" href="lib/css/gridExtensions/smartDataGrid.datePicker.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/gridExtensions/smartDataGrid.dateRange.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/gridExtensions/smartDataGrid.LABEL_BUTTON.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/gridExtensions/smartDataGrid.DATE.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/gridExtensions/smartDataGrid.themeSwitcher.css" />
+    
+    <!--themes css files-->
+    <link rel="stylesheet" type="text/css" href="lib/css/gridThemes/smartDataGrid.blueTheme.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/gridThemes/smartDataGrid.brownTheme.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/gridThemes/smartDataGrid.greyTheme.css" />
+   
+    <!--required by the plug-in-->
+    <script type="text/javascript" src="lib/vendor/js/jquery.js"></script>
+    
+    <!--vendor library js files need for additional features like re-loading last state, multi select, drag drop, date range picker, etc.-->
+    <script type="text/javascript" src="lib/vendor/js/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="lib/vendor/js/jquery.multiselect.patched.js"></script>
+    <script type="text/javascript" src="lib/vendor/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/vendor/js/daterangepicker.jQuery.patched.js"></script>
+    <script type="text/javascript" src="lib/vendor/js/json2.js"></script>
+    
+    <!--adds support for touch events-->
+    <script type="text/javascript" src="lib/vendor/js/jquery.ui.touch-punch.js"></script>
+
+    <!--core grid file-->
+    <script type="text/javascript" src="lib/js/plugins/grid/jquery.smartDataGrid.core.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/grid/SmartDataGrid.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/grid/smartDataGrid.DataStore.js"></script>
+
+    <!--optional grid extension files-->
+    <script type="text/javascript" src="lib/js/plugins/grid/smartDataGrid.statePersistToCookie.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/grid/smartDataGrid.plugin.groups.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/grid/smartDataGrid.plugin.columnResize.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/grid/smartDataGrid.plugin.columnReorder.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/grid/smartDataGrid.plugin.sortable.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/grid/smartDataGrid.plugin.filters.js"></script>
+    
+    <!-- js files for custom grid extensions demo-->
+    <script type="text/javascript" src="lib/js/plugins/gridExtensions/smartDataGrid.filter.SIMPLE_DATE.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/gridExtensions/smartDataGrid.filter.DATE.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/gridExtensions/smartDataGrid.filter.FREE_TEXT.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/gridExtensions/smartDataGrid.renderer.DATE.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/gridExtensions/smartDataGrid.renderer.SYSTEM_DATE.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/gridExtensions/smartDataGrid.renderer.LABEL_BUTTON.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/otherExtensions/smartDataGrid.plugin.LABEL_BUTTON.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/gridExtensions/smartDataGrid.plugin.switchTheme.js"></script>
+    
+    <!--fake store-->
+    <script type="text/javascript" src="lib/js/plugins/source/smartDataGrid.FakeLocalSource.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/source/fakeDataSet/smartDataGrid.fakeDataSet2.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/source/fakeDataSet/smartDataGrid.fakeDataSet4.js"></script>
+
+    <script type="text/javascript" src="lib/js/main/grid3.js"></script>
+</head>
+
+<body>
+    <div id="mainContainer">
+        <div class="smartDataGrid-switch-theme grid1-smartDataGrid-switch-theme">
+            <span class="">Switch theme:</span>
+            <a class="theme theme-brown" href="#brown"></a>
+            <a class="theme theme-default" href="#default"></a>
+            <a class="theme theme-blue" href="#blue"></a>
+            <a class="theme theme-grey" href="#grey"></a>
+        </div>
+
+        <div class="grid1-smartDataGrid-group-by smartDataGrid-group-by">
+            <p class="empty-message">Drop columns here to group by</p>
+            <div class="groups"></div>
+        </div>
+
+        <div id="grid1"></div>
+
+        <div class="smartDataGrid-switch-theme grid2-smartDataGrid-switch-theme">
+            <span class="">Switch theme:</span>
+            <a class="theme theme-brown" href="#brown"></a>
+            <a class="theme theme-default" href="#default"></a>
+            <a class="theme theme-blue" href="#blue"></a>
+            <a class="theme theme-grey" href="#grey"></a>
+        </div>
+
+        <div class="grid2-smartDataGrid-group-by smartDataGrid-group-by">
+            <p class="empty-message">Drop columns here to group by</p>
+            <div class="groups"></div>
+        </div>
+
+        <div id="grid2"></div>
+    </div>
+</body>
+</html>
