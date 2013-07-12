@@ -5,6 +5,15 @@ SmartDataGrid is a sophisticated fully featured grid control. It gives the abili
 
 Browser support: IE8+, FireFox, Chrome, Safari.
 
+Examples
+========
+
+Coming soon...
+
+Documentation
+=============
+
+Coming soon...
 
 License
 =======
