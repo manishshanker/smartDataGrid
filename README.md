@@ -27,8 +27,8 @@ Browser support
 Examples
 ========
 
-- Example 1: [Vanilla Grid](http://jsfiddle.net/PB7f6/embedded/result/)
-- Example 2: [Grid with filtering, grouping, sorting, state persistance and other features](http://jsfiddle.net/PB7f6/1/embedded/result)
+- Example 1: [Vanilla Grid](http://fiddle.jshell.net/PB7f6/show/light/)
+- Example 2: [Grid with filtering, grouping, sorting, state persistance and other features](http://fiddle.jshell.net/LyfYV/show/light/)
 
 Documentation
 =============
