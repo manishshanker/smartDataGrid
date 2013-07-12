@@ -1,5 +1,5 @@
-smartdatagrid
-=============
+SDG (SmartDataGrid)
+===================
 
 SmartDataGrid is a sophisticated fully featured grid control. It gives the ability to sort, reorder column, resize column, realtime data streaming, data filtering, data grouping, etc. 
 
