@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
 
     SmartDataGrid.fakeDataSet1 = (function () {
         function getColumns() {
@@ -155,91 +156,91 @@
             columns: getColumns(),
             filters: getFilters(),
             rows: rows,
-	        groupDetailsInFirstColumnOnly: false,
-	        groupDetails: [
-		        {
-			        "refLabel": "Cleared",
-			        "colNotional": 3000000,
-			        "colMTM": 20000000,
-			        "groupDetails": [
-				        {
-					        "refLabel": "CME",
-					        "colNotional": 200000,
-					        "colMTM": 300000,
-					        "groupDetails": [
-						        {
-							        "refLabel": "Buy",
-							        "colNotional": 200000,
-							        "colMTM": 300000
-						        },
-						        {
-							        "refLabel": "Sell",
-							        "colNotional": 100000,
-							        "colMTM": 100000
-						        }
-					        ]
-				        },
-				        {
-					        "refLabel": "LCH",
-					        "colNotional": 100000,
-					        "colMTM": 100000,
-					        "groupDetails": [
-						        {
-							        "refLabel": "Buy",
-							        "colNotional": 200000,
-							        "colMTM": 300000
-						        },
-						        {
-							        "refLabel": "Sell",
-							        "colNotional": 100000,
-							        "colMTM": 100000
-						        }
-					        ]
-				        }
-			        ]
-		        },
-		        {
-			        "refLabel": "Pending",
-			        "colNotional": 3000000,
-			        "colMTM": 20000000,
-			        "groupDetails": [
-				        {
-					        "refLabel": "CME",
-					        "colNotional": 200000,
-					        "colMTM": 300000,
-					        "groupDetails": [
-						        {
-							        "refLabel": "Buy",
-							        "colNotional": 200000,
-							        "colMTM": 300000
-						        },
-						        {
-							        "refLabel": "Sell",
-							        "colNotional": 100000,
-							        "colMTM": 100000
-						        }
-					        ]
-				        },
-				        {
-					        "refLabel": "LCH",
-					        "colNotional": 100000,
-					        "colMTM": 100000,
-					        "groupDetails": [
-						        {
-							        "refLabel": "Buy",
-							        "colNotional": 200000,
-							        "colMTM": 300000
-						        },
-						        {
-							        "refLabel": "Sell",
-							        "colNotional": 100000,
-							        "colMTM": 100000
-						        }
-					        ]
-				        }
-			        ]
-		        }
-	        ]
+            groupDetailsInFirstColumnOnly: false,
+            groupDetails: [
+                {
+                    "refLabel": "Cleared",
+                    "colNotional": 3000000,
+                    "colMTM": 20000000,
+                    "groupDetails": [
+                        {
+                            "refLabel": "CME",
+                            "colNotional": 200000,
+                            "colMTM": 300000,
+                            "groupDetails": [
+                                {
+                                    "refLabel": "Buy",
+                                    "colNotional": 200000,
+                                    "colMTM": 300000
+                                },
+                                {
+                                    "refLabel": "Sell",
+                                    "colNotional": 100000,
+                                    "colMTM": 100000
+                                }
+                            ]
+                        },
+                        {
+                            "refLabel": "LCH",
+                            "colNotional": 100000,
+                            "colMTM": 100000,
+                            "groupDetails": [
+                                {
+                                    "refLabel": "Buy",
+                                    "colNotional": 200000,
+                                    "colMTM": 300000
+                                },
+                                {
+                                    "refLabel": "Sell",
+                                    "colNotional": 100000,
+                                    "colMTM": 100000
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "refLabel": "Pending",
+                    "colNotional": 3000000,
+                    "colMTM": 20000000,
+                    "groupDetails": [
+                        {
+                            "refLabel": "CME",
+                            "colNotional": 200000,
+                            "colMTM": 300000,
+                            "groupDetails": [
+                                {
+                                    "refLabel": "Buy",
+                                    "colNotional": 200000,
+                                    "colMTM": 300000
+                                },
+                                {
+                                    "refLabel": "Sell",
+                                    "colNotional": 100000,
+                                    "colMTM": 100000
+                                }
+                            ]
+                        },
+                        {
+                            "refLabel": "LCH",
+                            "colNotional": 100000,
+                            "colMTM": 100000,
+                            "groupDetails": [
+                                {
+                                    "refLabel": "Buy",
+                                    "colNotional": 200000,
+                                    "colMTM": 300000
+                                },
+                                {
+                                    "refLabel": "Sell",
+                                    "colNotional": 100000,
+                                    "colMTM": 100000
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         };
 
     }());

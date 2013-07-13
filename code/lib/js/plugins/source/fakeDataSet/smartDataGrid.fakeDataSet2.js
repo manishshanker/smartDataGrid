@@ -19,6 +19,7 @@
  */
 
 (function ($) {
+    "use strict";
 
     SmartDataGrid.fakeDataSet2 = (function () {
 

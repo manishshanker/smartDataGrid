@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
 
     SmartDataGrid.fakeDataSet6 = (function () {
         function getColumns() {
@@ -89,7 +90,7 @@
             for (n = 0; n < 50; n++) {
                 rows[rows.length] = {
                     "id": n + 1,
-                    "colClientName": "Client_" + Math.floor(Math.random()*5),
+                    "colClientName": "Client_" + Math.floor(Math.random() * 5),
                     "colName": "Product_" + n,
                     "colTime": new Date().toLocaleTimeString(),
                     "colBidSize": Math.floor(Math.random() * 40000),
@@ -107,7 +108,7 @@
         if (window.localStorage) {
             data = (localStorage.gridData && JSON.parse(localStorage.gridData)) || null;
         }
-        if (location.hash.indexOf("child")<0) {
+        if (location.hash.indexOf("child") < 0) {
             data = {
                 isGridFilterable: false,
 //            isGridGroupable: false,

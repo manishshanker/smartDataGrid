@@ -38,21 +38,21 @@
 
                     //noinspection JSUnusedLocalSymbols
                     function onRowUpdate(event, row) {
-                        $.each(row, function(key, value) {
+                        $.each(row, function (key, value) {
                             var column = helper.getColumnById(key, options.columns);
                             if (column) {
-                                var $cell = helper.getRowElementById(row.id, options).find("."+key);
+                                var $cell = helper.getRowElementById(row.id, options).find("." + key);
                                 if (column.type === "NUMERIC") {
                                     var oldValue = cachedGridData[row.id].orig[key];
-                                    if (value>oldValue) {
+                                    if (value > oldValue) {
                                         $cell.removeClass("negative").addClass("updated-cell positive");
-                                    } else if (value<oldValue) {
+                                    } else if (value < oldValue) {
                                         $cell.removeClass("positive").addClass("updated-cell negative");
                                     }
                                     cachedGridData[row.id].orig[key] = value;
                                 }
                                 $cell.html(helper.getCellContent(value, column));
-                                window.setTimeout(function() {
+                                window.setTimeout(function () {
                                     $cell.removeClass("updated-cell");
                                     $cell = null;
                                 }, 2000);

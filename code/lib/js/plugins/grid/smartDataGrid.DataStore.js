@@ -289,9 +289,8 @@
     function getTransformedRowsIfJSON(rows, columns) {
         if (isDataInJSONFormat(rows)) {
             return rowTransformer(rows, getColumnOrder(columns));
-        } else {
-            return rows;
         }
+        return rows;
     }
 
     function rowTransformer(rows, columnOrder) {
@@ -393,8 +392,8 @@
         });
         var columnIndexInOrderLength = columnIndexInOrder.length;
         TheArr.sort(sortMulti);
-        function sortMulti(objA, objB, n) {
-            n = (arguments.length === 2) ? 0 : n;
+        function sortMulti(objA, objB, n1) {
+            var n = (arguments.length === 2) ? 0 : n1;
             var a = objA.data,
                 b = objB.data,
                 columnIndex = columnIndexInOrder[n],

@@ -4,7 +4,7 @@
     $.smartDataGrid.renderer.DATE = {
         cell: function (data) {
             return "<span class='date'>{date}</span>".supplant({
-                date: data ? data : "&nbsp;"
+                date: data || "&nbsp;"
             });
         },
         comparator: function (valA, valB) {

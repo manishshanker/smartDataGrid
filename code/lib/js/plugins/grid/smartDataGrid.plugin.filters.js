@@ -147,7 +147,8 @@
     function getFilter(filterType, filterData, id) {
         if (filterType === undefined) {
             return "";
-        } else if ($.smartDataGrid.filter[filterType]) {
+        }
+        if ($.smartDataGrid.filter[filterType]) {
             return $.smartDataGrid.filter[filterType].render(id, filterData).supplant({
                 filterIdentifier: filterType + "-filter"
             });
