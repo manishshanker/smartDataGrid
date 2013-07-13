@@ -4,20 +4,17 @@ SDG (SmartDataGrid)
 SmartDataGrid is a sophisticated fully featured grid control. 
 
 ### Features
-- Dynamic Data Loading
-- Virtual Scrolling
-- Dynamic Data Grouping
+- Dynamic data loading
+- Virtual scrolling
+- Dynamic data grouping
 - Data filtering
-- Column Sorting
-- Column Re-ordering
-- Column Re-sizing
+- Column sorting, re-ordering, re-sizing
 - State persistance
 - Easy to skin (purely CSS driven)
-- Ability to add custom filters and cell renderers
+- Support for custom filters and cell renderers
 - Tablet support (iOS/Android)
+- Support for mock to enable faster development
 - JSON based interface
-- Ability to develop the application without need for a server
-- JavaScript code JS-Linted
 
 ### Browser support
 - IE8+
