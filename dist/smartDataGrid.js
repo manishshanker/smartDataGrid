@@ -16,7 +16,7 @@
 
 /*!
  * @author Manish Shanker
- * @version $version$
+ * @version v1.0.20130712
  */
 
 (function ($) {
