@@ -1,5 +1,5 @@
-(function($) {
-
+(function ($) {
+    "use strict";
     var isStarted = false;
     var updateTimer;
 
@@ -16,11 +16,15 @@
         }, 100);
 
 
-        if (location.hash.indexOf("child")<0) {
-            $(document).on("keydown", function(event) {
+        if (location.hash.indexOf("child") < 0) {
+            $(document).on("keydown", function (event) {
                 if (event.keyCode === 83) {
                     isStarted = !isStarted;
-                    isStarted ? updateRowData() : window.clearTimeout(updateTimer);
+                    if (isStarted) {
+                        updateRowData();
+                    } else {
+                        window.clearTimeout(updateTimer);
+                    }
                 }
             });
         } else {
@@ -39,30 +43,25 @@
         }
     }
 
+    function randomData(data, key) {
+        if (Math.round(Math.random() * 2) > 1) {
+            data[key] = (1 + (Math.random() * 30));
+        }
+    }
+
     function updateRowData() {
         var data = JSON.parse($.cookie("data"));
-        if (location.hash.indexOf("child")<0) {
+        if (location.hash.indexOf("child") < 0) {
             data = {};
-            data.id = 1+Math.floor(Math.random()*50);
+            data.id = 1 + Math.floor(Math.random() * 50);
             randomData(data, "colBid");
             randomData(data, "colAsk");
             randomData(data, "colMin");
             data.colTime = new Date().toLocaleTimeString();
-            function randomData(data, key) {
-                if (Math.round(Math.random()*2)>1) {
-                    data[key] = (1 + (Math.random() * 30));
-                }
-            }
-            if (Math.round(Math.random()*2)>1) {
+            if (Math.round(Math.random() * 2) > 1) {
                 data.colMax = (30 + (Math.random() * 30));
             }
-//            if (Math.round(Math.random()*2)>1) {
-//                data.colAskSize = Math.floor(Math.random() * 40000);
-//            }
-//            if (Math.round(Math.random()*2)>1) {
-//                data.colBidSize = Math.floor(Math.random() * 40000);
-//            }
-            $.cookie("data",JSON.stringify(data));
+            $.cookie("data", JSON.stringify(data));
         }
         updateRow(data);
         updateTimer = window.setTimeout(updateRowData, 100);
