@@ -30,6 +30,8 @@ SmartDataGrid is a sophisticated fully featured grid control.
 1. [Vanilla Grid](http://fiddle.jshell.net/PB7f6/show/light/)
 2. [Grid with filtering, grouping, sorting, state persistance and other features](http://fiddle.jshell.net/LyfYV/show/light/)
 
+Note: All the examples are hosted on [JSFiddle](http://jsfiddle.net/), so you can change and play with it whenever and however you want. 
+
 ### License
 
 Copyright 2011-2013 Manish Shanker
