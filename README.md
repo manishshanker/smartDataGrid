@@ -4,29 +4,31 @@ SDG (SmartDataGrid)
 SmartDataGrid is a sophisticated fully featured grid control. 
 
 ### Features
-- Dynamic data loading
-- Virtual scrolling
-- Dynamic data grouping
-- Data filtering
-- Column sorting, re-ordering, re-sizing
-- State persistance
-- Easy to skin (purely CSS driven)
-- Support for custom filters and cell renderers
-- Tablet support (iOS/Android)
-- Support for mock to enable faster development
-- JSON based interface
+&#10004; Dynamic data loading <br/>
+&#10004; Virtual scrolling <br/>
+&#10004; Dynamic data grouping <br/>
+&#10004; Data filtering <br/>
+&#10004; Column sorting, re-ordering, re-sizing <br/>
+&#10004; State persistance <br/>
+&#10004; Easy to skin/theme (purely CSS driven) <br/>
+&#10004; Support for custom filters, cell renderers, sorting <br/>
+&#10004; Tablet support (iOS/Android) <br/>
+&#10004; Support for mock to enable faster development <br/>
+&#10004; JSON based interface <br/>
 
 ### Browser support
-- IE8+
-- FireFox 
-- Chrome
-- Safari
-- Opera
+&#10004; IE8+ <br/>
+&#10004; FireFox  <br/>
+&#10004; Chrome <br/>
+&#10004; Safari <br/>
+&#10004; Opera <br/>
+&#10004; iOS Safari <br/>
+&#10004; Android Chrome <br/>
 
 ### Examples
 
-- Example 1: [Vanilla Grid](http://fiddle.jshell.net/PB7f6/show/light/)
-- Example 2: [Grid with filtering, grouping, sorting, state persistance and other features](http://fiddle.jshell.net/LyfYV/show/light/)
+1. [Vanilla Grid](http://fiddle.jshell.net/PB7f6/show/light/)
+2. [Grid with filtering, grouping, sorting, state persistance and other features](http://fiddle.jshell.net/LyfYV/show/light/)
 
 ### License
 
