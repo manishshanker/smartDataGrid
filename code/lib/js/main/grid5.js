@@ -6,6 +6,7 @@
         var isStarted = false;
         var updateTimer;
         var webSocketService;
+        var userId = Math.random()*100000;
 
         $(function () {
             webSocketService = new KZ.WebSocketService({
@@ -35,7 +36,11 @@
         });
 
         function updateRow(data) {
-            $("#startStopBtn").attr("value","Stop");
+            if (userId === data.userId) {
+                $("#startStopBtn").attr("value","Stop");
+            } else {
+                $("#startStopBtn").css("visibility", "hidden");
+            }
             if (data) {
                 $("#gridLive").trigger(jQuery.smartDataGrid.updateRow, [data]);
                 $("#flotcontainer").trigger("update", [data]);
@@ -66,6 +71,7 @@
                     data.colTime = getTime(new Date());
                 }
                 if (data.colTime) {
+                    data.userId = userId;
                     webSocketService.publish(data);
                 }
             }
