@@ -16,7 +16,7 @@
 
 /*!
  * @author Manish Shanker
- * @version v1.0.20130712
+ * @version v1.0.20130715
  */
 
 (function ($) {
@@ -2973,6 +2973,19 @@ if (!String.hasOwnProperty("supplant")) {
             return "<span class='date'>{date}</span>".supplant({
                 date: stringDate
             });
+        }
+    };
+
+}(jQuery));
+(function ($) {
+    "use strict";
+
+    $.smartDataGrid.renderer.TEXT = {
+        cell: function (data) {
+            return data;
+        },
+        comparator: function (valA, valB) {
+            return valA < valB ? -1 : (valA > valB ? 1 : 0);
         }
     };
 
