@@ -1,7 +1,7 @@
 SDG (SmartDataGrid)
 ===================
 
-SmartDataGrid is a sophisticated fully featured grid control. 
+SmartDataGrid is a sophisticated fully featured jQuery based data grid control.
 
 ### Features
 &#10004; Dynamic data loading <br/>
