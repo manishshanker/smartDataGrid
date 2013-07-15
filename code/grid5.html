@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>SmartDataGrid | Real-time data stream example</title>
+
+    <!--vendor library css files need for additional features like multi select, drag drop, date range picker, etc.-->
+    <link rel="stylesheet" type="text/css" href="lib/vendor/css/jquery-ui-1.8.16.custom.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/vendor/css/jquery.multiselect.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/vendor/css/ui.daterangepicker.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../dist/smartDataGrid.css"/>
+
+    <!--required by the plug-in-->
+    <script type="text/javascript" src="lib/vendor/js/jquery.js"></script>
+
+    <!--vendor library js files need for additional features like re-loading last state, multi select, drag drop, date range picker, etc.-->
+    <script type="text/javascript" src="lib/vendor/js/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="lib/vendor/js/json2.js"></script>
+
+    <!--adds support for touch events-->
+    <script type="text/javascript" src="lib/vendor/js/jquery.ui.touch-punch.js"></script>
+
+    <!--core grid file-->
+    <script type="text/javascript" src="../dist/smartDataGrid.js"></script>
+
+    <!--fake store-->
+    <script type="text/javascript" src="lib/js/plugins/source/smartDataGrid.FakeLocalSource.js"></script>
+    <script type="text/javascript" src="lib/js/plugins/source/fakeDataSet/smartDataGrid.fakeDataSet5.js"></script>
+
+    <script type="text/javascript" src="http://demo.kaazing.com/lib/client/javascript/StompJms.js"></script>
+    <script type="text/javascript" src="http://www.flotcharts.org/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="lib/js/main/webSocketExample/WebSocketService.js"></script>
+    <script type="text/javascript" src="lib/js/main/grid5.js"></script>
+
+</head>
+
+<body>
+<div id="mainContainer">
+    <div id="gridLive" class="smartDataGrid-dark"></div>
+    <div class="chart-title">Barclays Plc - Bid Change</div>
+    <div id="flotcontainer" style="width: 500px; height: 150px;"></div>
+</div>
+</body>
+</html>
