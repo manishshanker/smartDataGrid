@@ -1,4 +1,5 @@
 (function ($) {
+    "use strict";
 
     function renderGridAndConnectToWebSocket() {
 
@@ -24,7 +25,11 @@
             $(document).on("keydown", function (event) {
                 if (event.keyCode === 83) {
                     isStarted = !isStarted;
-                    isStarted ? updateRowData() : window.clearTimeout(updateTimer);
+                    if (isStarted) {
+                        updateRowData();
+                    } else {
+                        window.clearTimeout(updateTimer);
+                    }
                 }
             });
         });
@@ -36,33 +41,34 @@
             }
         }
 
+        function getTime(date) {
+            return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        }
+
+        function randomData(data, key) {
+            if (Math.round(Math.random() * 2) > 1) {
+                data[key] = (1 + (Math.random() * 30));
+                data.colTime = getTime(new Date());
+            }
+        }
+
         function updateRowData() {
             if (location.hash.indexOf("child") < 0) {
                 var data = {};
                 data.id = 1 + Math.floor(Math.random() * 9);
-                function randomData(data, key) {
-                    if (Math.round(Math.random() * 2) > 1) {
-                        data[key] = (1 + (Math.random() * 30));
-                        data.colTime = new Date().toLocaleTimeString();
-                    }
-                }
-
                 randomData(data, "colBid");
                 randomData(data, "colAsk");
                 randomData(data, "colMin");
 
                 if (Math.round(Math.random() * 2) > 1) {
                     data.colMax = (30 + (Math.random() * 30));
-                    data.colTime = new Date().toLocaleTimeString();
+                    data.colTime = getTime(new Date());
                 }
                 if (data.colTime) {
                     webSocketService.publish(data);
                 }
             }
-            if (data.colTime) {
-                //   updateRow(data);
-            }
-            updateTimer = window.setTimeout(updateRowData, 1000);
+            updateTimer = window.setTimeout(updateRowData, 400);
         }
 
     }
