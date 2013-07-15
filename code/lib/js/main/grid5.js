@@ -22,19 +22,20 @@
             });
             gridCB.load();
 
-            $(document).on("keydown", function (event) {
-                if (event.keyCode === 83) {
-                    isStarted = !isStarted;
-                    if (isStarted) {
-                        updateRowData();
-                    } else {
-                        window.clearTimeout(updateTimer);
-                    }
+            $("#startStopBtn").on("click", function (event) {
+                isStarted = !isStarted;
+                if (isStarted) {
+                    $("#startStopBtn").attr("value","Stop");
+                    updateRowData();
+                } else {
+                    $("#startStopBtn").attr("value","Start");
+                    window.clearTimeout(updateTimer);
                 }
             });
         });
 
         function updateRow(data) {
+            $("#startStopBtn").attr("value","Stop");
             if (data) {
                 $("#gridLive").trigger(jQuery.smartDataGrid.updateRow, [data]);
                 $("#flotcontainer").trigger("update", [data]);
