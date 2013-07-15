@@ -27,13 +27,13 @@ SmartDataGrid is a sophisticated fully featured jQuery based data grid control.
 
 ### Examples
 
-1. [Vanilla Grid](http://jsfiddle.net/WTk4d/show/light)
-2. [Grid with filtering, grouping, sorting, state persistance and other features](http://jsfiddle.net/j9JGx/show/light)
-3. [Grid with custom renderer and sorting](http://jsfiddle.net/hUR3t/show/light) 
-4. [Grid with custom filter](http://jsfiddle.net/Sn3f3/show/light)
-5. [Grid with custom plug-in](http://jsfiddle.net/77MMA/)
-6. [Grid constructor properties explained](http://jsfiddle.net/QcXDJ/)
-7. [Grid column properties explained](http://jsfiddle.net/a9Ruw/)
+1. [Basic](http://jsfiddle.net/WTk4d/show/light)
+2. [With filtering, grouping, sorting, state persistance and other features](http://jsfiddle.net/j9JGx/show/light)
+3. [With custom renderer and sorting](http://jsfiddle.net/hUR3t/show/light) 
+4. [With custom filter](http://jsfiddle.net/Sn3f3/show/light)
+5. [With custom plug-in](http://jsfiddle.net/77MMA/)
+6. [Constructor properties](http://jsfiddle.net/QcXDJ/)
+7. [Column properties](http://jsfiddle.net/a9Ruw/)
 
 Note: All the examples are hosted on [JSFiddle](http://jsfiddle.net/), so you can change and play with it whenever and however you want. 
 
