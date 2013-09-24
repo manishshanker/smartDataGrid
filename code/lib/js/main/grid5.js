@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, FB) {
     "use strict";
 
     function renderGridAndConnectToWebSocket() {
@@ -6,44 +6,76 @@
         var isStarted = false;
         var updateTimer;
         var webSocketService;
-        var userId = Math.random()*100000;
+        var userId = Math.random() * 100000;
 
         $(function () {
-            webSocketService = new KZ.WebSocketService({
-                onTick: updateRow
+            webSocketService = new FB.WebSocketService({
+                onTick: updateRow,
+                onLoaded: onLoaded
             });
 
             webSocketService.connect();
 
-            var gridCB = new SmartDataGrid({
-                dataSource: new SmartDataGrid.FakeLocalSource(SmartDataGrid.fakeDataSet5),
-                showToolbar: false,
-                rowHover: false,
-                id: "gridLive"
-            });
-            gridCB.load();
+            var fakeDataSet = SmartDataGrid.fakeDataSet5;
 
-            $("#startStopBtn").on("click", function (event) {
-                isStarted = !isStarted;
-                if (isStarted) {
-                    $("#startStopBtn").attr("value","Stop");
-                    updateRowData();
+            function transformSourceData(data) {
+                var transformedData = [];
+                $.each(data.rowData, function (key, value) {
+                    transformedData.push(value);
+                });
+                data.metaData.rows = transformedData;
+                return data.metaData;
+            }
+
+            function transformToSourceData(data) {
+                var transformedData = {};
+                $.each(data.rows, function (i, item) {
+                    transformedData["s" + item.id] = item;
+                });
+                return {
+                    metaData: data,
+                    rowData: transformedData
+                };
+            }
+
+            function onLoaded(value) {
+                if (value.val() && value.val().gridData) {
+                    fakeDataSet = transformSourceData(value.val().gridData);
                 } else {
-                    $("#startStopBtn").attr("value","Start");
-                    window.clearTimeout(updateTimer);
+                    webSocketService.publish({gridData: transformToSourceData(fakeDataSet)});
                 }
-            });
+                var gridCB = new SmartDataGrid({
+                    dataSource: new SmartDataGrid.FakeLocalSource(fakeDataSet),
+                    showToolbar: false,
+                    rowHover: false,
+                    id: "gridLive"
+                });
+                gridCB.load();
+
+                $("#startStopBtn").on("click", function (event) {
+                    isStarted = !isStarted;
+                    if (isStarted) {
+                        $("#startStopBtn").attr("value", "Stop");
+                        updateRowData();
+                    } else {
+                        $("#startStopBtn").attr("value", "Start");
+                        window.clearTimeout(updateTimer);
+                    }
+                });
+            }
         });
 
         function updateRow(data) {
-            if (userId === data.userId) {
-                $("#startStopBtn").attr("value","Stop");
-            } else {
-                $("#startStopBtn").css("visibility", "hidden");
-            }
-            if (data) {
-                $("#gridLive").trigger(jQuery.smartDataGrid.updateRow, [data]);
-                $("#flotcontainer").trigger("update", [data]);
+            if (data.userId) {
+                if (userId === data.userId) {
+                    $("#startStopBtn").attr("value", "Stop");
+                } else {
+                    $("#startStopBtn").css("visibility", "hidden");
+                }
+                if (data) {
+                    $("#gridLive").trigger(jQuery.smartDataGrid.updateRow, [data]);
+                    $("#flotcontainer").trigger("update", [data]);
+                }
             }
         }
 
@@ -59,23 +91,22 @@
         }
 
         function updateRowData() {
-            if (location.hash.indexOf("child") < 0) {
-                var data = {};
-                data.id = 1 + Math.floor(Math.random() * 9);
-                randomData(data, "colBid");
-                randomData(data, "colAsk");
-                randomData(data, "colMin");
+            var data = {};
+            data.id = 1 + Math.floor(Math.random() * 9);
+            randomData(data, "colBid");
+            randomData(data, "colAsk");
+            randomData(data, "colMin");
 
-                if (Math.round(Math.random() * 2) > 1) {
-                    data.colMax = (30 + (Math.random() * 30));
-                    data.colTime = getTime(new Date());
-                }
-                if (data.colTime) {
-                    data.userId = userId;
-                    webSocketService.publish(data);
-                }
+            if (Math.round(Math.random() * 2) > 1) {
+                data.colMax = (30 + (Math.random() * 30));
+                data.colTime = getTime(new Date());
             }
-            updateTimer = window.setTimeout(updateRowData, 400);
+            if (data.colTime) {
+                data.userId = userId;
+                webSocketService.publish({tickData: data});
+                webSocketService.publishChild("gridData.rowData.s" + data.id, data);
+            }
+            updateTimer = window.setTimeout(updateRowData, 200);
         }
 
     }
@@ -151,4 +182,4 @@
         renderChartAndListenToTickUpdates();
     });
 
-}(jQuery));
+}(jQuery, FB));

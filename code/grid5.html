@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="lib/vendor/css/ui.daterangepicker.css"/>
 
     <link rel="stylesheet" type="text/css" href="../dist/smartDataGrid.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/css/gridThemes/smartDataGrid.greyTheme.css"/>
 
     <!--required by the plug-in-->
     <script type="text/javascript" src="lib/vendor/js/jquery.js"></script>
@@ -29,18 +30,18 @@
     <script type="text/javascript" src="lib/js/plugins/source/smartDataGrid.FakeLocalSource.js"></script>
     <script type="text/javascript" src="lib/js/plugins/source/fakeDataSet/smartDataGrid.fakeDataSet5.js"></script>
 
-    <script type="text/javascript" src="http://demo.kaazing.com/lib/client/javascript/StompJms.js"></script>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script type="text/javascript" src="http://www.flotcharts.org/flot/jquery.flot.js"></script>
-    <script type="text/javascript" src="lib/js/main/webSocketExample/WebSocketService.js"></script>
+    <script type="text/javascript" src="lib/js/main/webSocketExample/FBWebSocketService.js"></script>
     <script type="text/javascript" src="lib/js/main/grid5.js"></script>
 
 </head>
 
 <body>
 <div id="mainContainer">
-    <p>Instruction: Once you have loaded this URL in multiple windows and devices, press the start button to simulate live price ticks and update it in real-time everywhere</p>
+    <p>Instruction: Open this URL in multiple devices and press the start button to simulate real-time ticks.</p>
     <input id="startStopBtn" type="button" value="Start"/>
-    <div id="gridLive" class="smartDataGrid-dark"></div>
+    <div id="gridLive" class="smartDataGrid-grey"></div>
     <div class="chart-title">Barclays Plc - Bid Change</div>
     <div id="flotcontainer" style="width: 500px; height: 150px;"></div>
 </div>
