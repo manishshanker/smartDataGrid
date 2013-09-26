@@ -98,7 +98,7 @@
                 },
                 {
                     "id": 4,
-                    "colSymbol": "GBPUSD=X",
+                    "colSymbol": "GBPUSD",
                     "colName": "Spot FX GBP/USD",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 38464,
@@ -110,7 +110,7 @@
                 },
                 {
                     "id": 5,
-                    "colSymbol": "EURUSD=X",
+                    "colSymbol": "EURUSD",
                     "colName": "Spot FX EUR/USD",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 821,
