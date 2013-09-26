@@ -6,6 +6,12 @@
         return {
             "columns": [
                 {
+                    "label": "Symbol",
+                    "id": "colSymbol",
+                    "width": 100,
+                    "isHidden": true
+                },
+                {
                     "label": "Market",
                     "id": "colName",
                     "width": 100
@@ -56,6 +62,7 @@
             "rows": [
                 {
                     "id": 1,
+                    "colSymbol": "FTSE100",
                     "colName": "FTSE 100",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 3743,
@@ -67,6 +74,7 @@
                 },
                 {
                     "id": 2,
+                    "colSymbol": "GE30",
                     "colName": "Germany 30",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 10460,
@@ -78,6 +86,7 @@
                 },
                 {
                     "id": 3,
+                    "colSymbol": "WSTR",
                     "colName": "Wall Street",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 12909,
@@ -89,6 +98,7 @@
                 },
                 {
                     "id": 4,
+                    "colSymbol": "GBPUSD=X",
                     "colName": "Spot FX GBP/USD",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 38464,
@@ -100,6 +110,7 @@
                 },
                 {
                     "id": 5,
+                    "colSymbol": "EURUSD=X",
                     "colName": "Spot FX EUR/USD",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 821,
@@ -111,6 +122,7 @@
                 },
                 {
                     "id": 6,
+                    "colSymbol": "BP",
                     "colName": "BP Plc",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 11029,
@@ -122,6 +134,7 @@
                 },
                 {
                     "id": 7,
+                    "colSymbol": "BARC",
                     "colName": "Barclays Plc",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 30931,
@@ -133,6 +146,7 @@
                 },
                 {
                     "id": 8,
+                    "colSymbol": "VODA",
                     "colName": "Vodafone Group Plc",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 39090,
@@ -144,6 +158,7 @@
                 },
                 {
                     "id": 9,
+                    "colSymbol": "GOLD",
                     "colName": "Spot Gold",
                     "colTime": "4:15:52 PM",
                     "colBidSize": 31935,
@@ -156,6 +171,7 @@
             ],
             "state": {
                 "columnOrder": [
+                    "colSymbol",
                     "colName",
                     "colTime",
                     "colBidSize",
