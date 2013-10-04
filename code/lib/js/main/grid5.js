@@ -83,9 +83,9 @@
             return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
         }
 
-        function randomData(data, key) {
+        function randomData(data, key, minVal, rangeVal) {
             if (Math.round(Math.random() * 2) > 1) {
-                data[key] = (1 + (Math.random() * 30));
+                data[key] = ((minVal || 1) + (Math.random() * (rangeVal || 30)));
                 data.colTime = getTime(new Date());
             }
         }
@@ -93,8 +93,8 @@
         function updateRowData() {
             var data = {};
             data.id = 1 + Math.floor(Math.random() * 9);
-            randomData(data, "colBid");
-            randomData(data, "colAsk");
+            randomData(data, "colBid", 30, 3);
+            randomData(data, "colAsk", 33, 3);
             randomData(data, "colMin");
 
             if (Math.round(Math.random() * 2) > 1) {
