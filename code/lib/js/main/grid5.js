@@ -106,7 +106,7 @@
                 webSocketService.publish({tickData: data});
                 webSocketService.publishChild("gridData.rowData.s" + data.id, data);
             }
-            updateTimer = window.setTimeout(updateRowData, 200);
+            updateTimer = window.setTimeout(updateRowData, 100);
         }
 
     }
