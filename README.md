@@ -40,7 +40,7 @@ Note: All the examples are hosted on [JSFiddle](http://jsfiddle.net/), so you ca
 
 ### License
 
-Copyright 2011-2013 Manish Shanker
+Copyright 2011-2014 Manish Shanker
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
